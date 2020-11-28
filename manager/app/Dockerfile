@@ -20,7 +20,7 @@ ENV     PATH=$PATH:$GRADLE_HOME/bin
 
 WORKDIR /root
 
-RUN     git clone https://github.com/APEX-Network/APEX-Nodemanager.git &&\
-        git clone https://github.com/APEX-Network/APEX-Blockchain-Core.git
+RUN     git clone https://github.com/PhoenixGlobal/APEX-Nodemanager.git &&\
+        git clone https://github.com/PhoenixGlobal/APEX-Blockchain-Core.git
 
 CMD     mvn -f APEX-Nodemanager spring-boot:run -Dspring-boot.run.arguments=--server.port=${APP_PORT}

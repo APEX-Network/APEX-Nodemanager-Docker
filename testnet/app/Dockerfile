@@ -21,9 +21,9 @@ ENV     PATH=$PATH:$GRADLE_HOME/bin
 
 WORKDIR /root
 
-RUN     git clone https://github.com/APEX-Network/APEX-Nodemanager.git &&\
-        git clone https://github.com/APEX-Network/APEX-Blockchain-Core.git
+RUN     git clone https://github.com/PhoenixGlobal/APEX-Nodemanager.git &&\
+        git clone https://github.com/PhoenixGlobal/APEX-Blockchain-Core.git
 
-RUN     wget -O settings.conf https://github.com/APEX-Network/APEX-Nodemanager-Docker/blob/master/testnet/conffiles/${CONF_NAME}?raw=true
+RUN     wget -O settings.conf https://github.com/PhoenixGlobal/APEX-Nodemanager-Docker/blob/master/testnet/conffiles/${CONF_NAME}?raw=true
 
 CMD     mvn -f APEX-Nodemanager spring-boot:run -Dspring-boot.run.arguments=--server.port=${APP_PORT}

@@ -22,12 +22,12 @@ ENV     GRADLE_HOME=/usr/local/gradle-${GRADLE_VERSION}
 ENV     PATH=$PATH:$GRADLE_HOME/bin
 
 RUN     cd /apex && \
-        git clone https://github.com/APEX-Network/APEX-Blockchain-Core.git && \
+        git clone https://github.com/PhoenixGlobal/APEX-Blockchain-Core.git && \
         cd APEX-Blockchain-Core && \
         git checkout ${CORE_BRANCH} && \
         gradle shadowJar && \
         cp build/libs/APEX-Blockchain-Core-${CORE_VERSION}.jar /apex/apex-blockchain-core.jar
 
-RUN     wget -O settings.conf https://github.com/APEX-Network/APEX-Nodemanager-Docker/blob/master/testnet/conffiles/${CONF_NAME}?raw=true
+RUN     wget -O settings.conf https://github.com/PhoenixGlobal/APEX-Nodemanager-Docker/blob/master/testnet/conffiles/${CONF_NAME}?raw=true
 
 CMD     ["java", "-jar", "/apex/apex-blockchain-core.jar"]
